@@ -123,13 +123,24 @@ function LandingPage() {
             — comfortably inside the top 1% globally. Now I'm teaching the exact techniques I used
             to get there.
           </p>
-          <div className="mt-10">
-            <div className="inline-flex flex-wrap gap-3">
+
+          {/* Course announcement banner */}
+          <div className="mt-10 rounded-lg border border-gold/40 bg-gold/10 p-6 md:p-7">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">
+              Next intensive course · August 1
+            </p>
+            <p className="mt-3 font-display text-2xl leading-snug text-mist md:text-3xl">
+              One day. Every technique I used to score in the top 1%.
+            </p>
+            <p className="mt-3 text-sm text-mist/70">
+              Small-group format. Seats are limited — enrol below to reserve yours.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={CHECKOUT_URL}
                 className="inline-flex items-center justify-center rounded-md bg-mist px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-white"
               >
-                Enrol now
+                Reserve your seat — Aug 1
                 <span aria-hidden className="ml-2">→</span>
               </a>
               <a
@@ -140,6 +151,7 @@ function LandingPage() {
               </a>
             </div>
           </div>
+
 
           <dl className="mt-20 grid max-w-3xl grid-cols-3 gap-8 border-t border-mist/15 pt-10">
             {[
