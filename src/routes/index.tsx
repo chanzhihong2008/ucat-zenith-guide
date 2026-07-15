@@ -296,17 +296,55 @@ function LandingPage() {
 
       {/* Why me */}
       <Section id="about" eyebrow="Why learn from me" tone="ink">
-        <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:gap-20">
+        <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
+          <div>
+            {/* Photo placeholder — replace src with your own image (e.g. /tutor.jpg or an imported asset) */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-mist/15 bg-mist/5">
+              <img
+                src="/tutor-placeholder.jpg"
+                alt="Zhi Hong Chan"
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
+              <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 text-center text-mist/50">
+                <span className="text-xs uppercase tracking-[0.25em] text-gold">Your photo here</span>
+                <span className="max-w-[200px] text-xs text-mist/40">
+                  Drop an image at <code className="text-mist/60">public/tutor-placeholder.jpg</code>
+                </span>
+              </div>
+            </div>
+            <p className="mt-6 font-display text-2xl text-mist">Zhi Hong Chan</p>
+            <p className="mt-1 text-sm text-mist/60">
+              Malaysia → London · Imperial College Medicine (incoming)
+            </p>
+          </div>
+
           <div>
             <h2 className="font-display text-3xl leading-tight text-mist md:text-5xl">
               A recent top 1% scorer —{" "}
-              <span className="italic text-mist/80">not a tutor coasting on an old score.</span>
+              <span className="italic text-mist/80">who just did this from where you are.</span>
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-mist/75">
-              I sat the UCAT in 2025. The test is still fresh — the interface, the pacing, the
-              exact question styles being used right now. I know what worked because I did it
-              months ago, not years ago.
+              I'm Zhi Hong — an international student from Malaysia who sat the UCAT in 2025 and
+              scored 2560 with Band 1. I know the international applicant journey because I've just
+              done it: the timezone gaps, the limited local prep, the pressure of applying to UK
+              medicine from abroad. The techniques I teach are built for exactly that context.
             </p>
+            <ul className="mt-10 space-y-6 border-l border-mist/15 pl-8">
+              {[
+                ["Imperial College London", "Incoming first-year medical student"],
+                ["UCL & King's College London", "Offers from both medical schools"],
+                ["2560 / 2700 · Band 1", "UCAT sat in 2025 — top 1% globally"],
+                ["International applicant", "From Malaysia — same journey as my students"],
+              ].map(([k, v]) => (
+                <li key={k}>
+                  <p className="font-display text-xl text-mist">{k}</p>
+                  <p className="mt-1 text-sm text-mist/60">{v}</p>
+                </li>
+              ))}
+            </ul>
             <div className="mt-10">
               <div className="inline-flex flex-wrap gap-3">
                 <a
@@ -325,22 +363,9 @@ function LandingPage() {
               </div>
             </div>
           </div>
-
-          <ul className="space-y-8 border-l border-mist/15 pl-8">
-            {[
-              ["Imperial College London", "Incoming first-year medical student"],
-              ["UCL & King's College London", "Offers from both medical schools"],
-              ["2560 / 2700 · Band 1", "UCAT sat in 2025 — top 1% globally"],
-              ["Replicable system", "Techniques designed to be taught, not just used"],
-            ].map(([k, v]) => (
-              <li key={k}>
-                <p className="font-display text-xl text-mist">{k}</p>
-                <p className="mt-1 text-sm text-mist/60">{v}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </Section>
+
 
       {/* Enquire */}
       <Section id="enquire" eyebrow="Get in touch" tone="mist">
