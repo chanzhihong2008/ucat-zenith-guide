@@ -81,16 +81,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "One-to-one UCAT tutoring and intensive courses from a 2560 / Band 1 scorer heading to Imperial College London. Learn the exact techniques used to score in the top 1%.",
+          "One day course on August 1st led by a 2560 / Band 1 international student heading to Imperial College London from Malaysia. Learn the exact techniques to score!",
       },
       { property: "og:title", content: "UCAT Tutoring — Top 1% Techniques from an Imperial Medic" },
       {
         property: "og:description",
         content:
-          "Intensive UCAT courses and 1-1 tutoring built around the patterns and techniques that produce top 1% scores.",
+          "One day course on August 1st led by a 2560 / Band 1 international student heading to Imperial College London from Malaysia. Learn the exact techniques to score!",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "UCAT Tutoring — Top 1% Techniques from an Imperial Medic" },
+      { name: "twitter:description", content: "One day course on August 1st led by a 2560 / Band 1 international student heading to Imperial College London from Malaysia. Learn the exact techniques to score!" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3d998650-b763-4c26-bd1d-6e56cdb6a5bb/id-preview-e5e874d7--ffa2767b-f2ea-4411-90e0-32f085b8735e.lovable.app-1784132850778.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3d998650-b763-4c26-bd1d-6e56cdb6a5bb/id-preview-e5e874d7--ffa2767b-f2ea-4411-90e0-32f085b8735e.lovable.app-1784132850778.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
