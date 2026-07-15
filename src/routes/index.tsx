@@ -197,8 +197,8 @@ function LandingPage() {
               ["Verbal Reasoning", "Scan-first reading paths that let you answer without re-reading."],
               ["Decision Making", "Structured attack for each question type — puzzles, syllogisms, probability."],
               ["Quantitative Reasoning", "Mental-math shortcuts and when to skip vs solve."],
-              ["Abstract Reasoning", "The pattern-checklist I run in under 10 seconds per set."],
               ["Situational Judgement", "The framework that got me a clean Band 1."],
+
             ].map(([k, v]) => (
               <li key={k}>
                 <p className="font-display text-lg text-ink">{k}</p>
