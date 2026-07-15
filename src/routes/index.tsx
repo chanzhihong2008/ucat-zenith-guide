@@ -118,10 +118,10 @@ function LandingPage() {
             <span className="italic text-mist/85">There are patterns. I'll teach you them.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist/75">
-            An international student from Malaysia — incoming first-year medic at Imperial College
-            London, with offers from UCL and King's. I scored 2560/2700 with Band 1 in my 2025 UCAT
-            — comfortably inside the top 1% globally. Now I'm teaching other international
-            applicants the exact techniques I used to get there.
+            Incoming first-year medic at Imperial College London, with offers from UCL and King's as
+            an international student from Malaysia. I scored 2560/2700 with Band 1 in my 2025 UCAT
+            — comfortably inside the top 1% globally. Now I'm teaching the exact techniques I used
+            to get there.
           </p>
           <div className="mt-10">
             <div className="inline-flex flex-wrap gap-3">
