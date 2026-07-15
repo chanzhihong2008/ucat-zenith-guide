@@ -272,7 +272,7 @@ function LandingPage() {
 
 
       {/* 1-1 Tutoring */}
-      <Section id="tutoring" eyebrow="Product 02 · One-to-one tutoring">
+      <Section id="tutoring" eyebrow="Also available · One-to-one tutoring">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div className="order-2 md:order-1 rounded-lg border border-ink/10 bg-mist p-8 md:p-10">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
