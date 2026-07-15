@@ -210,30 +210,45 @@ function LandingPage() {
       </Section>
 
       {/* Course */}
-      <Section id="course" eyebrow="Product 01 · Intensive course" tone="mist">
+      <Section id="course" eyebrow="The main event · Intensive course · August 1" tone="mist">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
             <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              One or two days.
+              August 1.
               <br />
-              <span className="italic text-blue">Every technique I used.</span>
+              <span className="italic text-blue">One day. Every technique I used.</span>
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              A concentrated group course walking you through every section of the UCAT, every
-              question type, and every formula I built to attack them. Live examples, timed
+              A concentrated one-day group course walking you through every section of the UCAT,
+              every question type, and every formula I built to attack them. Live examples, timed
               drills, and the mindset shifts that make the difference on test day.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
               You leave with a repeatable playbook — not a folder of notes you'll never re-open.
+              Seats are limited so the group stays small enough for me to work with each of you.
             </p>
             <div className="mt-10">
-              <CtaPair payLabel="Enrol in the course" enquireLabel="Enquire about the course" />
+              <CtaPair
+                payLabel="Reserve your seat — Aug 1"
+                enquireLabel="Enquire about the course"
+              />
             </div>
           </div>
 
           <div className="rounded-lg border border-ink/10 bg-background p-8 md:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">What's covered</p>
-            <ul className="mt-6 space-y-4">
+            <div className="flex items-baseline justify-between border-b border-ink/10 pb-5">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
+                  Course date
+                </p>
+                <p className="mt-2 font-display text-2xl text-ink">August 1</p>
+              </div>
+              <p className="text-xs uppercase tracking-widest text-ink/50">Limited seats</p>
+            </div>
+            <p className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-blue">
+              What's covered
+            </p>
+            <ul className="mt-4 space-y-4">
               {[
                 "Full breakdown of every UCAT section",
                 "Section-by-section formulas & attack plans",
@@ -251,12 +266,10 @@ function LandingPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 border-t border-ink/10 pt-6 text-sm text-ink/60">
-              Small groups. One or two-day formats — announced ahead of each intake.
-            </p>
           </div>
         </div>
       </Section>
+
 
       {/* 1-1 Tutoring */}
       <Section id="tutoring" eyebrow="Product 02 · One-to-one tutoring">
