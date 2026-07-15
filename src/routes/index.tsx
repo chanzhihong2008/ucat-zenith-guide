@@ -1,24 +1,451 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroPattern from "../assets/hero-pattern.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+// Placeholder checkout URL — swap for a real Stripe / payment link later.
+const CHECKOUT_URL = "#enquire";
+const ENQUIRE_URL = "#enquire";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: LandingPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function CtaPair({
+  payLabel = "Enrol now",
+  enquireLabel = "Enquire",
+  align = "start",
+}: {
+  payLabel?: string;
+  enquireLabel?: string;
+  align?: "start" | "center";
+}) {
   return (
     <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+      className={`flex flex-wrap gap-3 ${align === "center" ? "justify-center" : "justify-start"}`}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+      <a
+        href={CHECKOUT_URL}
+        className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-medium tracking-wide text-mist transition-colors hover:bg-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
+      >
+        {payLabel}
+        <span aria-hidden className="ml-2">→</span>
+      </a>
+      <a
+        href={ENQUIRE_URL}
+        className="inline-flex items-center justify-center rounded-md border border-ink/20 bg-transparent px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:border-ink hover:bg-ink/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
+      >
+        {enquireLabel}
+      </a>
     </div>
+  );
+}
+
+function Section({
+  id,
+  eyebrow,
+  children,
+  tone = "light",
+}: {
+  id?: string;
+  eyebrow?: string;
+  children: React.ReactNode;
+  tone?: "light" | "mist" | "ink";
+}) {
+  const toneClass =
+    tone === "ink"
+      ? "bg-ink text-mist"
+      : tone === "mist"
+        ? "bg-mist text-ink"
+        : "bg-background text-ink";
+  return (
+    <section id={id} className={`${toneClass} w-full`}>
+      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        {eyebrow && (
+          <p
+            className={`mb-6 text-xs font-medium uppercase tracking-[0.2em] ${
+              tone === "ink" ? "text-gold" : "text-blue"
+            }`}
+          >
+            {eyebrow}
+          </p>
+        )}
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function LandingPage() {
+  return (
+    <main className="min-h-screen bg-background text-ink">
+      <header className="absolute inset-x-0 top-0 z-20">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+          <a href="#top" className="font-display text-lg text-mist">
+            UCAT<span className="text-gold">.</span>Tutor
+          </a>
+          <nav className="hidden gap-8 text-sm text-mist/80 md:flex">
+            <a href="#approach" className="hover:text-mist">Approach</a>
+            <a href="#course" className="hover:text-mist">Course</a>
+            <a href="#tutoring" className="hover:text-mist">1-1 Tutoring</a>
+            <a href="#about" className="hover:text-mist">About</a>
+          </nav>
+          <a
+            href={ENQUIRE_URL}
+            className="rounded-md border border-mist/30 px-4 py-2 text-sm text-mist transition-colors hover:bg-mist hover:text-ink"
+          >
+            Enquire
+          </a>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="top" className="relative w-full overflow-hidden bg-ink text-mist">
+        <img
+          src={heroPattern}
+          alt=""
+          aria-hidden
+          width={1600}
+          height={1200}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/80 to-ink" />
+        <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-40 md:pb-40 md:pt-48">
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-gold">
+            2560 / 2700 · Band 1 · Top 1% globally
+          </p>
+          <h1 className="font-display text-4xl leading-[1.1] md:text-6xl">
+            The UCAT isn't random.
+            <br />
+            <span className="italic text-mist/85">There are patterns. I'll teach you them.</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist/75">
+            Incoming first-year medic at Imperial College London, with offers from UCL and King's.
+            I scored 2560/2700 with Band 1 in my 2025 UCAT — comfortably inside the top 1%
+            globally. Now I'm teaching the exact techniques I used to get there.
+          </p>
+          <div className="mt-10">
+            <div className="inline-flex flex-wrap gap-3">
+              <a
+                href={CHECKOUT_URL}
+                className="inline-flex items-center justify-center rounded-md bg-mist px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-white"
+              >
+                Enrol now
+                <span aria-hidden className="ml-2">→</span>
+              </a>
+              <a
+                href={ENQUIRE_URL}
+                className="inline-flex items-center justify-center rounded-md border border-mist/40 px-7 py-3.5 text-sm font-medium tracking-wide text-mist transition-colors hover:bg-mist/10"
+              >
+                Enquire
+              </a>
+            </div>
+          </div>
+
+          <dl className="mt-20 grid max-w-3xl grid-cols-3 gap-8 border-t border-mist/15 pt-10">
+            {[
+              { k: "2560", v: "UCAT score (2025)" },
+              { k: "Band 1", v: "Situational Judgement" },
+              { k: "Top 1%", v: "Globally" },
+            ].map((s) => (
+              <div key={s.k}>
+                <dt className="font-display text-3xl text-mist md:text-4xl">{s.k}</dt>
+                <dd className="mt-2 text-xs uppercase tracking-widest text-mist/60">{s.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <Section id="approach" eyebrow="The approach">
+        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-20">
+          <div>
+            <h2 className="font-display text-3xl leading-tight md:text-5xl">
+              Even a test built to be unpredictable{" "}
+              <span className="italic text-blue">has patterns you can exploit.</span>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-ink/75">
+              Everyone treats the UCAT as chaos — a scramble against the clock with no way to
+              prepare properly. That's wrong. Underneath the surface, question types repeat,
+              distractors repeat, and time-pressure traps repeat. What separates a top 1% score
+              from a decent one is having a rehearsed way to attack each pattern the moment you
+              recognise it.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-ink/75">
+              I call them formulas. You'll leave with one for every section of the test.
+            </p>
+            <div className="mt-10">
+              <CtaPair />
+            </div>
+          </div>
+
+          <ul className="space-y-6 border-l border-ink/10 pl-8">
+            {[
+              ["Verbal Reasoning", "Scan-first reading paths that let you answer without re-reading."],
+              ["Decision Making", "Structured attack for each question type — puzzles, syllogisms, probability."],
+              ["Quantitative Reasoning", "Mental-math shortcuts and when to skip vs solve."],
+              ["Abstract Reasoning", "The pattern-checklist I run in under 10 seconds per set."],
+              ["Situational Judgement", "The framework that got me a clean Band 1."],
+            ].map(([k, v]) => (
+              <li key={k}>
+                <p className="font-display text-lg text-ink">{k}</p>
+                <p className="mt-1 text-sm text-ink/65">{v}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Course */}
+      <Section id="course" eyebrow="Product 01 · Intensive course" tone="mist">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
+          <div>
+            <h2 className="font-display text-3xl leading-tight md:text-5xl">
+              One or two days.
+              <br />
+              <span className="italic text-blue">Every technique I used.</span>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-ink/75">
+              A concentrated group course walking you through every section of the UCAT, every
+              question type, and every formula I built to attack them. Live examples, timed
+              drills, and the mindset shifts that make the difference on test day.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-ink/75">
+              You leave with a repeatable playbook — not a folder of notes you'll never re-open.
+            </p>
+            <div className="mt-10">
+              <CtaPair payLabel="Enrol in the course" enquireLabel="Enquire about the course" />
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-ink/10 bg-background p-8 md:p-10">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">What's covered</p>
+            <ul className="mt-6 space-y-4">
+              {[
+                "Full breakdown of every UCAT section",
+                "Section-by-section formulas & attack plans",
+                "Timing strategy — when to solve, guess, flag",
+                "Live worked examples on hard question types",
+                "Situational Judgement framework (Band 1 method)",
+                "Test-day mindset & pacing routine",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-ink/80">
+                  <span
+                    aria-hidden
+                    className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 border-t border-ink/10 pt-6 text-sm text-ink/60">
+              Small groups. One or two-day formats — announced ahead of each intake.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* 1-1 Tutoring */}
+      <Section id="tutoring" eyebrow="Product 02 · One-to-one tutoring">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
+          <div className="order-2 md:order-1 rounded-lg border border-ink/10 bg-mist p-8 md:p-10">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
+              How sessions work
+            </p>
+            <ul className="mt-6 space-y-4">
+              {[
+                "Diagnostic first: we find the exact question types costing you marks",
+                "Targeted drills on your weak sections between sessions",
+                "Live problem-solving — I show you how I'd attack each question",
+                "Timing coaching for the sections where seconds decide bands",
+                "Test-week plan: what to practise, what to leave alone",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-ink/80">
+                  <span
+                    aria-hidden
+                    className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="order-1 md:order-2">
+            <h2 className="font-display text-3xl leading-tight md:text-5xl">
+              Personalised, targeted,{" "}
+              <span className="italic text-blue">built around your weak spots.</span>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-ink/75">
+              The course gets you the system. One-to-one tutoring is where we sharpen it against
+              your specific test — the sections you keep losing marks on, the timing you can't
+              quite fix, the question types that break your rhythm.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-ink/75">
+              Flexible scheduling. Homework between sessions. Honest feedback.
+            </p>
+            <div className="mt-10">
+              <CtaPair
+                payLabel="Book 1-1 tutoring"
+                enquireLabel="Enquire about tutoring"
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Why me */}
+      <Section id="about" eyebrow="Why learn from me" tone="ink">
+        <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:gap-20">
+          <div>
+            <h2 className="font-display text-3xl leading-tight text-mist md:text-5xl">
+              A recent top 1% scorer —{" "}
+              <span className="italic text-mist/80">not a tutor coasting on an old score.</span>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-mist/75">
+              I sat the UCAT in 2025. The test is still fresh — the interface, the pacing, the
+              exact question styles being used right now. I know what worked because I did it
+              months ago, not years ago.
+            </p>
+            <div className="mt-10">
+              <div className="inline-flex flex-wrap gap-3">
+                <a
+                  href={CHECKOUT_URL}
+                  className="inline-flex items-center justify-center rounded-md bg-mist px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-white"
+                >
+                  Enrol now
+                  <span aria-hidden className="ml-2">→</span>
+                </a>
+                <a
+                  href={ENQUIRE_URL}
+                  className="inline-flex items-center justify-center rounded-md border border-mist/40 px-6 py-3 text-sm font-medium tracking-wide text-mist transition-colors hover:bg-mist/10"
+                >
+                  Enquire
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <ul className="space-y-8 border-l border-mist/15 pl-8">
+            {[
+              ["Imperial College London", "Incoming first-year medical student"],
+              ["UCL & King's College London", "Offers from both medical schools"],
+              ["2560 / 2700 · Band 1", "UCAT sat in 2025 — top 1% globally"],
+              ["Replicable system", "Techniques designed to be taught, not just used"],
+            ].map(([k, v]) => (
+              <li key={k}>
+                <p className="font-display text-xl text-mist">{k}</p>
+                <p className="mt-1 text-sm text-mist/60">{v}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Enquire */}
+      <Section id="enquire" eyebrow="Get in touch" tone="mist">
+        <div className="grid gap-12 md:grid-cols-[1fr_1.2fr] md:gap-20">
+          <div>
+            <h2 className="font-display text-3xl leading-tight md:text-5xl">
+              Ready to start —{" "}
+              <span className="italic text-blue">or have a question first?</span>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-ink/75">
+              Enrol directly if you know which product you want, or send an enquiry and I'll get
+              back to you personally with dates, pricing, and anything else you need.
+            </p>
+          </div>
+
+          <form
+            action="mailto:hello@example.com"
+            method="post"
+            encType="text/plain"
+            className="rounded-lg border border-ink/10 bg-background p-8 md:p-10"
+          >
+            <div className="grid gap-5">
+              <label className="grid gap-2 text-sm">
+                <span className="font-medium text-ink">Your name</span>
+                <input
+                  name="name"
+                  required
+                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
+                />
+              </label>
+              <label className="grid gap-2 text-sm">
+                <span className="font-medium text-ink">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
+                />
+              </label>
+              <label className="grid gap-2 text-sm">
+                <span className="font-medium text-ink">I'm interested in</span>
+                <select
+                  name="interest"
+                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
+                >
+                  <option>The intensive course</option>
+                  <option>1-1 tutoring</option>
+                  <option>Both</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label className="grid gap-2 text-sm">
+                <span className="font-medium text-ink">Message</span>
+                <textarea
+                  name="message"
+                  rows={4}
+                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
+                />
+              </label>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-medium tracking-wide text-mist transition-colors hover:bg-navy"
+                >
+                  Send enquiry
+                  <span aria-hidden className="ml-2">→</span>
+                </button>
+                <a
+                  href={CHECKOUT_URL}
+                  className="inline-flex items-center justify-center rounded-md border border-ink/20 px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-ink/5"
+                >
+                  Or enrol directly
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </Section>
+
+      {/* Footer */}
+      <footer className="w-full bg-ink text-mist/70">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-display text-lg text-mist">
+              UCAT<span className="text-gold">.</span>Tutor
+            </p>
+            <p className="mt-1 text-sm text-mist/60">
+              © {new Date().getFullYear()} · Top 1% UCAT techniques.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={CHECKOUT_URL}
+              className="inline-flex items-center justify-center rounded-md bg-mist px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-white"
+            >
+              Enrol now
+            </a>
+            <a
+              href={ENQUIRE_URL}
+              className="inline-flex items-center justify-center rounded-md border border-mist/30 px-5 py-2.5 text-sm font-medium text-mist transition-colors hover:bg-mist/10"
+            >
+              Enquire
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
