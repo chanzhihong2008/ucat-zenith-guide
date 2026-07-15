@@ -123,13 +123,24 @@ function LandingPage() {
             — comfortably inside the top 1% globally. Now I'm teaching the exact techniques I used
             to get there.
           </p>
-          <div className="mt-10">
-            <div className="inline-flex flex-wrap gap-3">
+
+          {/* Course announcement banner */}
+          <div className="mt-10 rounded-lg border border-gold/40 bg-gold/10 p-6 md:p-7">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">
+              Next intensive course · August 1
+            </p>
+            <p className="mt-3 font-display text-2xl leading-snug text-mist md:text-3xl">
+              One day. Every technique I used to score in the top 1%.
+            </p>
+            <p className="mt-3 text-sm text-mist/70">
+              Small-group format. Seats are limited — enrol below to reserve yours.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={CHECKOUT_URL}
                 className="inline-flex items-center justify-center rounded-md bg-mist px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-white"
               >
-                Enrol now
+                Reserve your seat — Aug 1
                 <span aria-hidden className="ml-2">→</span>
               </a>
               <a
@@ -140,6 +151,7 @@ function LandingPage() {
               </a>
             </div>
           </div>
+
 
           <dl className="mt-20 grid max-w-3xl grid-cols-3 gap-8 border-t border-mist/15 pt-10">
             {[
@@ -172,8 +184,9 @@ function LandingPage() {
               recognise it.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
-              I call them formulas. You'll leave with one for every section of the test.
+              Think of them as formulas — one for every section, drilled until they're automatic.
             </p>
+
             <div className="mt-10">
               <CtaPair />
             </div>
@@ -184,8 +197,8 @@ function LandingPage() {
               ["Verbal Reasoning", "Scan-first reading paths that let you answer without re-reading."],
               ["Decision Making", "Structured attack for each question type — puzzles, syllogisms, probability."],
               ["Quantitative Reasoning", "Mental-math shortcuts and when to skip vs solve."],
-              ["Abstract Reasoning", "The pattern-checklist I run in under 10 seconds per set."],
               ["Situational Judgement", "The framework that got me a clean Band 1."],
+
             ].map(([k, v]) => (
               <li key={k}>
                 <p className="font-display text-lg text-ink">{k}</p>
@@ -197,30 +210,45 @@ function LandingPage() {
       </Section>
 
       {/* Course */}
-      <Section id="course" eyebrow="Product 01 · Intensive course" tone="mist">
+      <Section id="course" eyebrow="The main event · Intensive course · August 1" tone="mist">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
             <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              One or two days.
+              August 1.
               <br />
-              <span className="italic text-blue">Every technique I used.</span>
+              <span className="italic text-blue">One day. Every technique I used.</span>
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              A concentrated group course walking you through every section of the UCAT, every
-              question type, and every formula I built to attack them. Live examples, timed
+              A concentrated one-day group course walking you through every section of the UCAT,
+              every question type, and every formula I built to attack them. Live examples, timed
               drills, and the mindset shifts that make the difference on test day.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
               You leave with a repeatable playbook — not a folder of notes you'll never re-open.
+              Seats are limited so the group stays small enough for me to work with each of you.
             </p>
             <div className="mt-10">
-              <CtaPair payLabel="Enrol in the course" enquireLabel="Enquire about the course" />
+              <CtaPair
+                payLabel="Reserve your seat — Aug 1"
+                enquireLabel="Enquire about the course"
+              />
             </div>
           </div>
 
           <div className="rounded-lg border border-ink/10 bg-background p-8 md:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">What's covered</p>
-            <ul className="mt-6 space-y-4">
+            <div className="flex items-baseline justify-between border-b border-ink/10 pb-5">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
+                  Course date
+                </p>
+                <p className="mt-2 font-display text-2xl text-ink">August 1</p>
+              </div>
+              <p className="text-xs uppercase tracking-widest text-ink/50">Limited seats</p>
+            </div>
+            <p className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-blue">
+              What's covered
+            </p>
+            <ul className="mt-4 space-y-4">
               {[
                 "Full breakdown of every UCAT section",
                 "Section-by-section formulas & attack plans",
@@ -238,15 +266,13 @@ function LandingPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 border-t border-ink/10 pt-6 text-sm text-ink/60">
-              Small groups. One or two-day formats — announced ahead of each intake.
-            </p>
           </div>
         </div>
       </Section>
 
+
       {/* 1-1 Tutoring */}
-      <Section id="tutoring" eyebrow="Product 02 · One-to-one tutoring">
+      <Section id="tutoring" eyebrow="Also available · One-to-one tutoring">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div className="order-2 md:order-1 rounded-lg border border-ink/10 bg-mist p-8 md:p-10">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
