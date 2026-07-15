@@ -110,7 +110,7 @@ function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/80 to-ink" />
         <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-40 md:pb-40 md:pt-48">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-gold">
-            2560 / 2700 · Band 1 · Top 1% globally
+            2560 / 2700 · Band 1 · Top 1% globally · Malaysia → UK
           </p>
           <h1 className="font-display text-4xl leading-[1.1] md:text-6xl">
             The UCAT isn't random.
@@ -118,9 +118,10 @@ function LandingPage() {
             <span className="italic text-mist/85">There are patterns. I'll teach you them.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist/75">
-            Incoming first-year medic at Imperial College London, with offers from UCL and King's.
-            I scored 2560/2700 with Band 1 in my 2025 UCAT — comfortably inside the top 1%
-            globally. Now I'm teaching the exact techniques I used to get there.
+            An international student from Malaysia — incoming first-year medic at Imperial College
+            London, with offers from UCL and King's. I scored 2560/2700 with Band 1 in my 2025 UCAT
+            — comfortably inside the top 1% globally. Now I'm teaching other international
+            applicants the exact techniques I used to get there.
           </p>
           <div className="mt-10">
             <div className="inline-flex flex-wrap gap-3">
