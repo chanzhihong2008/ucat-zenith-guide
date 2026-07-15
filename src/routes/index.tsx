@@ -184,8 +184,9 @@ function LandingPage() {
               recognise it.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
-              I call them formulas. You'll leave with one for every section of the test.
+              Think of them as formulas — one for every section, drilled until they're automatic.
             </p>
+
             <div className="mt-10">
               <CtaPair />
             </div>
