@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroPattern from "../assets/hero-pattern.jpg";
 
 const CHECKOUT_URL = "https://buy.stripe.com/00w28r64adj736mdTAaIM01";
-const ENQUIRE_URL = "mailto:hello@example.com?subject=UCAT%20Course%20Enquiry";
+const ENQUIRE_URL = "https://forms.gle/Z1eraUFseJmxwrLo8";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
