@@ -193,11 +193,10 @@ function LandingPage() {
 
           <ul className="space-y-6 border-l border-ink/10 pl-8">
             {[
-              ["Verbal Reasoning", "Scan-first reading paths that let you answer without re-reading."],
+              ["Verbal Reasoning", "Know which questions to target, and how to answer even when there is no keyword."],
               ["Decision Making", "Structured attack for each question type — puzzles, syllogisms, probability."],
               ["Quantitative Reasoning", "Mental-math shortcuts and when to skip vs solve."],
               ["Situational Judgement", "The framework that got me a clean Band 1."],
-
             ].map(([k, v]) => (
               <li key={k}>
                 <p className="font-display text-lg text-ink">{k}</p>
