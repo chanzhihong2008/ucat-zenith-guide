@@ -214,7 +214,7 @@ function LandingPage() {
       </Section>
 
       {/* Course */}
-      <Section id="course" eyebrow="The main event · Intensive course · August 1" tone="mist">
+      <Section id="course" eyebrow="The main event · Intensive course · August 1 · 9am–4pm" tone="mist">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
             <h2 className="font-display text-3xl leading-tight md:text-5xl">
@@ -223,16 +223,29 @@ function LandingPage() {
               <span className="italic text-blue">One day. Every technique I used.</span>
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              A concentrated one-day group course walking you through every section of the UCAT,
-              every question type, and every formula I built to attack them. Live examples, timed
-              drills, and the mindset shifts that make the difference on test day.
+              A concentrated one-day group course — 9am to 4pm on August 1st — walking you through every
+              section of the UCAT, every question type, and every formula I built to attack them. Live
+              examples, timed drills, and the mindset shifts that make the difference on test day.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
               You leave with a repeatable playbook — not a folder of notes you'll never re-open.
               Seats are limited so the group stays small enough for me to work with each of you.
-              After the course, you get unlimited WhatsApp support until your exam. And if you
-              don't get any interviews, you get a full refund.
             </p>
+
+            <div className="mt-8 rounded-lg border border-blue/20 bg-blue/5 p-5">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">Included guarantees</p>
+              <ul className="mt-3 space-y-2 text-ink/80">
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  <span>Unlimited WhatsApp support after the course until your exam</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  <span>Full refund if you don't get any interviews</span>
+                </li>
+              </ul>
+            </div>
+
             <div className="mt-10">
               <CtaPair
                 payLabel="Reserve your seat — Aug 1"
