@@ -256,6 +256,8 @@ function LandingPage() {
                 "Live worked examples on hard question types",
                 "Situational Judgement framework (Band 1 method)",
                 "Test-day mindset & pacing routine",
+                "Unlimited WhatsApp support after the course until your exam",
+                "Full refund if you don't get any interviews",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-ink/80">
                   <span
