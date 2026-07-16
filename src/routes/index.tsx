@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroPattern from "../assets/hero-pattern.jpg";
 
-// Placeholder checkout URL — swap for a real Stripe / payment link later.
-const CHECKOUT_URL = "#enquire";
-const ENQUIRE_URL = "#enquire";
+const CHECKOUT_URL = "https://buy.stripe.com/00w28r64adj736mdTAaIM01";
+const ENQUIRE_URL = "mailto:hello@example.com?subject=UCAT%20Course%20Enquiry";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
