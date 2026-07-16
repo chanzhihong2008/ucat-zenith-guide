@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroPattern from "../assets/hero-pattern.jpg";
 
-// Placeholder checkout URL — swap for a real Stripe / payment link later.
-const CHECKOUT_URL = "#enquire";
-const ENQUIRE_URL = "#enquire";
+const CHECKOUT_URL = "https://buy.stripe.com/00w28r64adj736mdTAaIM01";
+const ENQUIRE_URL = "mailto:hello@example.com?subject=UCAT%20Course%20Enquiry";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -85,7 +84,6 @@ function LandingPage() {
           <nav className="hidden gap-8 text-sm text-mist/80 md:flex">
             <a href="#approach" className="hover:text-mist">Approach</a>
             <a href="#course" className="hover:text-mist">Course</a>
-            <a href="#tutoring" className="hover:text-mist">1-1 Tutoring</a>
             <a href="#about" className="hover:text-mist">About</a>
           </nav>
           <a
@@ -133,7 +131,8 @@ function LandingPage() {
               One day. Every technique I used to score in the top 1%.
             </p>
             <p className="mt-3 text-sm text-mist/70">
-              Small-group format. Seats are limited — enrol below to reserve yours.
+              Small-group format. Unlimited WhatsApp support after the course until your exam.
+              Full refund if you don't get any interviews.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -194,11 +193,10 @@ function LandingPage() {
 
           <ul className="space-y-6 border-l border-ink/10 pl-8">
             {[
-              ["Verbal Reasoning", "Scan-first reading paths that let you answer without re-reading."],
+              ["Verbal Reasoning", "Know which questions to target, and how to answer even when there is no keyword."],
               ["Decision Making", "Structured attack for each question type — puzzles, syllogisms, probability."],
               ["Quantitative Reasoning", "Mental-math shortcuts and when to skip vs solve."],
               ["Situational Judgement", "The framework that got me a clean Band 1."],
-
             ].map(([k, v]) => (
               <li key={k}>
                 <p className="font-display text-lg text-ink">{k}</p>
@@ -226,6 +224,8 @@ function LandingPage() {
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
               You leave with a repeatable playbook — not a folder of notes you'll never re-open.
               Seats are limited so the group stays small enough for me to work with each of you.
+              After the course, you get unlimited WhatsApp support until your exam. And if you
+              don't get any interviews, you get a full refund.
             </p>
             <div className="mt-10">
               <CtaPair
@@ -256,6 +256,8 @@ function LandingPage() {
                 "Live worked examples on hard question types",
                 "Situational Judgement framework (Band 1 method)",
                 "Test-day mindset & pacing routine",
+                "Unlimited WhatsApp support after the course until your exam",
+                "Full refund if you don't get any interviews",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-ink/80">
                   <span
@@ -271,54 +273,6 @@ function LandingPage() {
       </Section>
 
 
-      {/* 1-1 Tutoring */}
-      <Section id="tutoring" eyebrow="Also available · One-to-one tutoring">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
-          <div className="order-2 md:order-1 rounded-lg border border-ink/10 bg-mist p-8 md:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
-              How sessions work
-            </p>
-            <ul className="mt-6 space-y-4">
-              {[
-                "Diagnostic first: we find the exact question types costing you marks",
-                "Targeted drills on your weak sections between sessions",
-                "Live problem-solving — I show you how I'd attack each question",
-                "Timing coaching for the sections where seconds decide bands",
-                "Test-week plan: what to practise, what to leave alone",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-ink/80">
-                  <span
-                    aria-hidden
-                    className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="order-1 md:order-2">
-            <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              Personalised, targeted,{" "}
-              <span className="italic text-blue">built around your weak spots.</span>
-            </h2>
-            <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              The course gets you the system. One-to-one tutoring is where we sharpen it against
-              your specific test — the sections you keep losing marks on, the timing you can't
-              quite fix, the question types that break your rhythm.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-ink/75">
-              Flexible scheduling. Homework between sessions. Honest feedback.
-            </p>
-            <div className="mt-10">
-              <CtaPair
-                payLabel="Book 1-1 tutoring"
-                enquireLabel="Enquire about tutoring"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
 
       {/* Why me */}
       <Section id="about" eyebrow="Why learn from me" tone="ink">
@@ -392,84 +346,6 @@ function LandingPage() {
         </div>
       </Section>
 
-
-      {/* Enquire */}
-      <Section id="enquire" eyebrow="Get in touch" tone="mist">
-        <div className="grid gap-12 md:grid-cols-[1fr_1.2fr] md:gap-20">
-          <div>
-            <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              Ready to start —{" "}
-              <span className="italic text-blue">or have a question first?</span>
-            </h2>
-            <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              Enrol directly if you know which product you want, or send an enquiry and I'll get
-              back to you personally with dates, pricing, and anything else you need.
-            </p>
-          </div>
-
-          <form
-            action="mailto:hello@example.com"
-            method="post"
-            encType="text/plain"
-            className="rounded-lg border border-ink/10 bg-background p-8 md:p-10"
-          >
-            <div className="grid gap-5">
-              <label className="grid gap-2 text-sm">
-                <span className="font-medium text-ink">Your name</span>
-                <input
-                  name="name"
-                  required
-                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span className="font-medium text-ink">Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span className="font-medium text-ink">I'm interested in</span>
-                <select
-                  name="interest"
-                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
-                >
-                  <option>The intensive course</option>
-                  <option>1-1 tutoring</option>
-                  <option>Both</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span className="font-medium text-ink">Message</span>
-                <textarea
-                  name="message"
-                  rows={4}
-                  className="rounded-md border border-ink/15 bg-background px-4 py-3 text-ink outline-none transition-colors focus:border-blue"
-                />
-              </label>
-              <div className="mt-2 flex flex-wrap gap-3">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-medium tracking-wide text-mist transition-colors hover:bg-navy"
-                >
-                  Send enquiry
-                  <span aria-hidden className="ml-2">→</span>
-                </button>
-                <a
-                  href={CHECKOUT_URL}
-                  className="inline-flex items-center justify-center rounded-md border border-ink/20 px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-ink/5"
-                >
-                  Or enrol directly
-                </a>
-              </div>
-            </div>
-          </form>
-        </div>
-      </Section>
 
       {/* Footer */}
       <footer className="w-full bg-ink text-mist/70">
