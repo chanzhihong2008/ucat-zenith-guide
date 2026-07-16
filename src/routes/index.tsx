@@ -273,54 +273,6 @@ function LandingPage() {
       </Section>
 
 
-      {/* 1-1 Tutoring */}
-      <Section id="tutoring" eyebrow="Also available · One-to-one tutoring">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
-          <div className="order-2 md:order-1 rounded-lg border border-ink/10 bg-mist p-8 md:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue">
-              How sessions work
-            </p>
-            <ul className="mt-6 space-y-4">
-              {[
-                "Diagnostic first: we find the exact question types costing you marks",
-                "Targeted drills on your weak sections between sessions",
-                "Live problem-solving — I show you how I'd attack each question",
-                "Timing coaching for the sections where seconds decide bands",
-                "Test-week plan: what to practise, what to leave alone",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-ink/80">
-                  <span
-                    aria-hidden
-                    className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="order-1 md:order-2">
-            <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              Personalised, targeted,{" "}
-              <span className="italic text-blue">built around your weak spots.</span>
-            </h2>
-            <p className="mt-8 text-lg leading-relaxed text-ink/75">
-              The course gets you the system. One-to-one tutoring is where we sharpen it against
-              your specific test — the sections you keep losing marks on, the timing you can't
-              quite fix, the question types that break your rhythm.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-ink/75">
-              Flexible scheduling. Homework between sessions. Honest feedback.
-            </p>
-            <div className="mt-10">
-              <CtaPair
-                payLabel="Book 1-1 tutoring"
-                enquireLabel="Enquire about tutoring"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
 
       {/* Why me */}
       <Section id="about" eyebrow="Why learn from me" tone="ink">
