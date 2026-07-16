@@ -224,6 +224,8 @@ function LandingPage() {
             <p className="mt-4 text-lg leading-relaxed text-ink/75">
               You leave with a repeatable playbook — not a folder of notes you'll never re-open.
               Seats are limited so the group stays small enough for me to work with each of you.
+              After the course, you get unlimited WhatsApp support until your exam. And if you
+              don't get any interviews, you get a full refund.
             </p>
             <div className="mt-10">
               <CtaPair
