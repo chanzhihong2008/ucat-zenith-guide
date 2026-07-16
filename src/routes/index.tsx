@@ -125,15 +125,21 @@ function LandingPage() {
           {/* Course announcement banner */}
           <div className="mt-10 rounded-lg border border-gold/40 bg-gold/10 p-6 md:p-7">
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">
-              Next intensive course · August 1
+              Next intensive course · August 1 · 9am–4pm
             </p>
             <p className="mt-3 font-display text-2xl leading-snug text-mist md:text-3xl">
               One day. Every technique I used to score in the top 1%.
             </p>
-            <p className="mt-3 text-sm text-mist/70">
-              Small-group format. Unlimited WhatsApp support after the course until your exam.
-              Full refund if you don't get any interviews.
-            </p>
+            <ul className="mt-4 space-y-2 text-sm text-mist/80">
+              <li className="flex items-start gap-2">
+                <span aria-hidden className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                <span>Unlimited WhatsApp support after the course until your exam</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span aria-hidden className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                <span>Full refund if you don't get any interviews</span>
+              </li>
+            </ul>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={CHECKOUT_URL}
