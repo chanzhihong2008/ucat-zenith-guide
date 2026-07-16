@@ -131,7 +131,8 @@ function LandingPage() {
               One day. Every technique I used to score in the top 1%.
             </p>
             <p className="mt-3 text-sm text-mist/70">
-              Small-group format. Seats are limited — enrol below to reserve yours.
+              Small-group format. Unlimited WhatsApp support after the course until your exam.
+              Full refund if you don't get any interviews.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
