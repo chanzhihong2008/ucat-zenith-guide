@@ -212,7 +212,7 @@ function LandingPage() {
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
             <h2 className="font-display text-3xl leading-tight md:text-5xl">
-              August 1.
+              On August 1st, I'm revealing it all.
               <br />
               <span className="italic text-blue">One day. Every technique I used.</span>
             </h2>
