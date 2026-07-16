@@ -371,7 +371,7 @@ function LandingPage() {
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-display text-lg text-mist">
-              UCAT<span className="text-gold">.</span>Tutor
+              Decode UCAT
             </p>
             <p className="mt-1 text-sm text-mist/60">
               © {new Date().getFullYear()} · Top 1% UCAT techniques.
