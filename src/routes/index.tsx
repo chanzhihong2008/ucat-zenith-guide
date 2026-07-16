@@ -84,7 +84,6 @@ function LandingPage() {
           <nav className="hidden gap-8 text-sm text-mist/80 md:flex">
             <a href="#approach" className="hover:text-mist">Approach</a>
             <a href="#course" className="hover:text-mist">Course</a>
-            <a href="#tutoring" className="hover:text-mist">1-1 Tutoring</a>
             <a href="#about" className="hover:text-mist">About</a>
           </nav>
           <a
